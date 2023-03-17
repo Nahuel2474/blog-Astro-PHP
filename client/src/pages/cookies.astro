@@ -1,0 +1,100 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
+import Sidenav from "../components/Sidenav.astro";
+import { layout, styles } from "../styles/styles";
+---
+
+<style>
+  p {
+    margin: 2rem 0;
+    font-weight: 700;
+  }
+</style>
+
+<html data-theme="light">
+  <BaseHead
+    title="politica de cookies"
+    description="politicas de cookies de Mañana Saludable"
+  />
+  <body>
+    <main class={`${layout.Container} relative`}>
+      <Navbar />
+      <Sidenav />
+      <section class="my-24">
+        <h1 class={`${styles.heading} text-center`}>
+          Política de cookies para Mañana Saludable
+        </h1>
+
+        <p>
+          En Mañana Saludable utilizamos cookies para mejorar la experiencia de
+          usuario y obtener información estadística sobre la navegación en
+          nuestro sitio web.
+        </p>
+
+        <h4 class={`${styles.title}`}>¿Qué son las cookies?</h4>
+
+        <p>
+          Las cookies son pequeños archivos de texto que se almacenan en el
+          navegador del usuario cuando visita un sitio web. Las cookies permiten
+          al sitio web recordar las preferencias del usuario, como el idioma o
+          la moneda, y pueden ser utilizadas para rastrear la actividad del
+          usuario en el sitio web.
+        </p>
+
+        <h4 class={`${styles.title}`}>¿Qué tipo de cookies utilizamos?</h4>
+
+        <p>
+          En Mañana Saludable utilizamos cookies de sesión y cookies
+          persistentes. Las cookies de sesión se borran automáticamente cuando
+          el usuario cierra el navegador. Las cookies persistentes permanecen en
+          el navegador del usuario hasta que se borran manualmente o hasta que
+          caducan.
+        </p>
+
+        <p>
+          También utilizamos cookies propias y de terceros. Las cookies propias
+          son las que se envían desde nuestro sitio web y las de terceros son
+          las que se envían desde otros sitios web, como proveedores de
+          servicios de análisis.
+        </p>
+
+        <h4 class={`${styles.title}`}>
+          En nuestro sitio web utilizamos las siguientes cookies:
+        </h4>
+
+        <ul class="my-5">
+          <li>
+            Cookies de análisis: utilizamos Google Analytics para recopilar
+            información sobre el uso de nuestro sitio web. Estas cookies nos
+            permiten conocer el número de visitantes del sitio web, las páginas
+            más visitadas y otros datos estadísticos.
+          </li>
+
+          <li>
+            Cookies de redes sociales: utilizamos cookies de redes sociales para
+            permitir al usuario compartir contenido de nuestro sitio web en sus
+            perfiles de redes sociales.
+          </li>
+        </ul>
+
+        <h4 class={`${styles.title}`}>¿Cómo puedo desactivar las cookies?</h4>
+
+        <p>
+            El usuario puede desactivar las cookies en cualquier momento cambiando la configuración de su navegador. Sin embargo, tenga en cuenta que desactivar las cookies puede afectar la funcionalidad del sitio web.
+        </p>
+
+        <h4 class={`${styles.title}`}>Cambios en la política de cookies</h4>
+
+        <p>
+            Mañana Saludable se reserva el derecho de modificar esta política de cookies en cualquier momento. Se recomienda al usuario que revise periódicamente esta página para estar al tanto de cualquier cambio.
+        </p>
+
+
+
+      </section>
+      <Footer />
+    </main>
+  </body>
+</html>

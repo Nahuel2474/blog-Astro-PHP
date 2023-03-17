@@ -1,0 +1,82 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
+import Sidenav from "../components/Sidenav.astro";
+import { layout } from "../styles/styles";
+---
+
+
+<style>
+    p {
+        margin: 2rem 0;
+        font-weight: 700;
+    }
+</style>
+
+<html data-theme="light">
+  <BaseHead
+    title="privacidad"
+    description="politicas de privacidad de Mañana Saludable"
+  />
+  <body>
+    <main class={`${layout.Container} relative`}>
+      <Navbar />
+      <Sidenav />
+      <section class="my-24">
+        <p>
+          En "Mañana Saludable" respetamos y protegemos la privacidad de
+          nuestros usuarios. A continuación, se describe cómo recopilamos,
+          utilizamos, protegemos y divulgamos la información que recopilamos de
+          nuestros usuarios.
+        </p>
+        <p>
+          Recopilación de información Recopilamos información personal y no
+          personal de nuestros usuarios en diferentes momentos, incluyendo, pero
+          no limitado a, cuando los usuarios visitan nuestro sitio, se registran
+          en nuestro sitio, realizan una compra o responden a una encuesta. La
+          información que podemos recopilar incluye nombre, dirección de correo
+          electrónico, información de contacto y de pago, así como información
+          demográfica.
+        </p>
+        <p>
+          Uso de información Utilizamos la información recopilada de nuestros
+          usuarios para proporcionar servicios y productos, para mejorar la
+          experiencia del usuario en nuestro sitio, para personalizar la
+          publicidad y el contenido, para comunicarnos con los usuarios sobre
+          nuestros productos y servicios y para cumplir con los requisitos
+          legales.
+        </p>
+        <p>
+          Protección de información "Mañana Saludable" se compromete a proteger
+          la información personal de nuestros usuarios. Utilizamos medidas de
+          seguridad adecuadas para proteger la información recopilada de
+          nuestros usuarios contra el acceso no autorizado, la alteración, la
+          divulgación o la destrucción.
+        </p>
+        <p>
+          Divulgación de información a terceros No vendemos, intercambiamos ni
+          transferimos información personal identificable a terceros. Esto no
+          incluye a terceros confiables que nos ayudan a operar nuestro sitio
+          web, siempre y cuando dichos terceros acuerden mantener la
+          confidencialidad de esta información.
+        </p>
+        <p>
+          Política de cookies Utilizamos cookies en nuestro sitio web para
+          mejorar la experiencia del usuario. Las cookies son archivos de texto
+          pequeños que se colocan en el disco duro de la computadora de un
+          usuario a través de un navegador web. Las cookies se utilizan para
+          registrar información sobre las preferencias de los usuarios y
+          optimizar la experiencia del usuario en nuestro sitio.
+        </p>
+        <p>
+          Cambios a nuestra política de privacidad "Mañana Saludable" se reserva
+          el derecho de cambiar esta política de privacidad en cualquier
+          momento. Se alienta a los usuarios a revisar esta política de
+          privacidad con frecuencia.
+        </p>
+      </section>
+      <Footer />
+    </main>
+  </body>
+</html>

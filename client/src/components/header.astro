@@ -1,0 +1,48 @@
+---
+import { styles } from "../styles/styles";
+---
+
+<header class={`container mt-16`}>
+  <div class="flex my-5">
+    <article class={`${styles.imgHeader} w-full relative mr-5`}>
+      <a
+        href="#"
+        class="bg-[#eee]  text-[#000] rounded p-2 absolute font-bold bottom-5 left-5"
+      >
+        ¿Como afecta el estres en nuestra salud?
+      </a>
+      <img
+        src="/blog1.jpg"
+        class={`${styles.imgHeader} w-full  `}
+        alt="top-post-1"
+      />
+    </article>
+    <article class="w-full ml-5 relative">
+      <a
+        href="#"
+        class="bg-[#eee]  text-[#000] p-2 rounded absolute font-bold bottom-5 left-5"
+      >
+        Ejercicio cardiovascular
+      </a>
+
+      <img
+        src="/blog2.jpg"
+        class={`${styles.imgHeader} w-full  `}
+        alt="top-post-2"
+      />
+    </article>
+  </div>
+  <article class="w-full relative">
+    <a
+      href="#"
+      class="bg-[#eee] text-[#000] p-2 rounded absolute font-bold bottom-5 left-5"
+    >
+      Recetas para una mañana saludable
+    </a>
+    <img
+      class={` w-full ${styles.imgHeader}`}
+      alt="landscape photo header"
+      src="/blog4.jpg"
+    />
+  </article>
+</header>

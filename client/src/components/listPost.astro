@@ -1,0 +1,37 @@
+---
+import Pagination from "./pagination.astro";
+import { styles } from "../styles/styles";
+
+const {post, PageNumbers} = Astro.props
+
+---
+
+
+<section class="mt-5">
+  {post.map((blog, index: number) => (
+  <article class=" my-32 flex flex-col ">
+    <div class={`flex ${(index+1) % 2 == 0 ? 'flex-row-reverse' : ''}`}>
+      <a class={`w-full`} href={`/blog/${blog.id}`}>
+      <img src={blog.img} class={`${styles.imgPost} w-full h-56`} alt="" />
+        
+        </a>
+      <div class={`w-1/2 flex flex-col justify-between ${(index+1) % 2 == 0 ? 'mr-10' : 'ml-20'}`}>
+        <h4 class={`${styles.title} `}>
+          <a href={`/blog/${blog.id}`}>{blog.titulo}</a>
+          </h4>
+        <span class="my-2 ml-5 font-semibold text-[#ccc]">{blog.date}</span>
+        <div class="w-3/4  mt-auto textContainer">
+         <p class="ml-5 font-light textBody ">
+           {blog.text}
+         </p>
+        </div>
+      </div>
+      
+    </div>
+
+    <hr class="border-1 w-3/4 mx-auto border-b border-[#000] mt-7">
+  </article>
+  ))}
+  <Pagination PageNumbers={PageNumbers}  />
+</section>
+

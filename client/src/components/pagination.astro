@@ -1,0 +1,26 @@
+---
+
+const {PageNumbers} = Astro.props
+---
+
+<nav>
+  <ul class="flex justify-center mb-5 font-bold">
+    {
+      PageNumbers == 1 ? '' : (<img src="/left.svg" alt="" />)
+    }
+    {
+      Array.from({ length: PageNumbers }).map((el, index) => (
+        PageNumbers == 1 ? 
+        <li><a href="/blogs/2">Next</a></li>
+        :  (
+        <li class="mx-5">
+          <a href="">{index + 1}</a>
+        </li>
+        )   
+      ))
+    }
+        {
+          PageNumbers == 1 ? '' : (<img src="/right.svg" alt="" />)
+        }
+  </ul>
+</nav>

@@ -1,0 +1,14 @@
+---
+import { styles } from "../../styles/styles";
+
+const { post } = Astro.props;
+---
+
+<main class="text-center mt-28 rounded">
+  <h1 class={`${styles.heading}`}>{post.titulo}</h1>
+  <span class={`${styles.datePost}`}>{post.date}</span>
+
+  <div class="styling" set:html={post.body} />
+</main>
+
+

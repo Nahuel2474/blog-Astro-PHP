@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+/* F0F8FF */
+body {
+  background-color: var(--bg-color) ;
+  color: var(--text-color)
+}
+
+[data-theme="light"] {
+  --bg-color :  #FDFCFF;
+  --text-color : #333;
+}
+
+[data-theme="dark"] {
+  --bg-color :  #333;
+  --text-color : #FDFCFF;
+}
+
+.navbarcolorbg {
+  background-color: var(--bg-color);
+}
+
+h4 {
+  cursor: default;
+}
+
+.styling img {
+  height: 20rem !important; 
+  width: 100% !important;
+  object-fit: cover !important;
+  border-radius: 0.25rem !important;
+  margin: 5rem 0rem !important;
+}
+
+.titlePost {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.show {
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.ingredientes {
+  text-align: left;
+}
+
+.ingredientes h2 ,h4{
+  font-weight: 700;
+  margin-bottom: 0.4em;
+}
+
+.ingredientes ul, ol {
+  margin : 2em 1em;
+  list-style: disc;
+}
+
+.liElements > li {
+  margin: 10px 0;
+  transition: all 400ms ease-in-out;
+  width: 100%;
+}
+
+.liElements > li:hover {
+  background-color: #ccc;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes slideInDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slideInDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}

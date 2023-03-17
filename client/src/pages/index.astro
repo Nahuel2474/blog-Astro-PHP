@@ -1,0 +1,32 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/navbar.astro";
+import Header from "../components/header.astro";
+import ListPost from "../components/listPost.astro";
+import Footer from "../components/footer.astro";
+import Sidenav from "../components/Sidenav.astro";
+import CookiesAdvice from "../components/cookiesAdvice.astro";
+import { layout } from "../styles/styles";
+
+const url =
+  "http://localhost/MañanaSaludable/api/controller/homeController.php?index";
+const response = await fetch(url);
+const data = await response.json();
+
+---
+
+
+<html lang="es" data-theme="light">
+  <BaseHead title="Mañana Saludable" description="hi" />
+
+  <body class="mx-5">
+    <main class={`${layout.Container} relative`}>
+      <Navbar />
+      <Sidenav />
+      <Header />
+      <CookiesAdvice />
+      <ListPost post={data} PageNumbers={1}  />
+      <Footer />
+    </main>
+  </body>
+</html>

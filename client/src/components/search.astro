@@ -1,0 +1,32 @@
+<script>
+  const searchBtn = document.getElementById("search");
+  const searchForm = document.getElementById("searchForm");
+
+  searchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    searchForm.classList.toggle("hidden");
+    searchForm.classList.toggle("flex");
+  });
+
+/*   searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const searchInput = searchForm.querySelector("input").value;
+    const url = `/busqueda/1?busqueda=${searchInput}`;
+
+    window.location.href = url;
+  }); */
+</script>
+
+<form
+action="/busqueda/1"
+  id="searchForm"
+  method="POST"
+  class="hidden fixed top-16 justify-center w-1/2 slideInDown z-10 mt-3 bg-black"
+>
+  <input class="bg-[#ccc] rounded w-full p-2 outline-0" type="text" value="asa" name="busqueda" />
+  <button
+    type="submit"
+    class="bg-[#0F57D8] absolute right-0 h-full rounded px-3 text-[#fff] font-bold"
+    >Buscar</button
+  >
+</form>

@@ -1,0 +1,92 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Navbar from "../../components/navbar.astro";
+import Footer from "../../components/footer.astro";
+import Article from "../../components/blog/article.astro";
+import { layout } from "../../styles/styles";
+import Sidenav from "../../components/Sidenav.astro";
+import Search from "../../components/search.astro";
+
+export async function getStaticPaths() {
+  const url =
+    "http://localhost/MañanaSaludable/api/controller/homeController.php?getAllPost";
+  const response = await fetch(url);
+  const data = await response.json();
+
+  return data.map((post) => {
+    return [{ params: { post: post.id } }];
+  });
+}
+
+const { post } = Astro.params;
+
+const url = `http://localhost/MañanaSaludable/api/controller/homeController.php?getPost=${post}`;
+const response = await fetch(url);
+const data = await response.json();
+---
+
+<script>
+  const changeTheme = document.getElementById('changeTheme') as HTMLButtonElement;
+  const logoNavbar = document.getElementById('logoNavbar') as HTMLImageElement;
+  const searchIcon = document.getElementById('searchIcon') as HTMLImageElement;
+  const menuImg = document.getElementById('menuImg') as HTMLImageElement;
+  const changeIcon = document.getElementById('changeIcon') as HTMLImageElement;
+  const footerLogo = document.getElementById('footerLogo') as HTMLImageElement;
+  
+  // Obtener el tema actual del sessionStorage (si existe)
+  const currentTheme = sessionStorage.getItem('theme');
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'light') {
+      logoNavbar.src = '/logo.png';
+      footerLogo.src = '/logo.png';
+      searchIcon.src = '/dark-search.png';
+      menuImg.src = '/menu.svg';
+      changeIcon.src = '/moon.svg';
+    } else {
+      logoNavbar.src = '/white-logo.png';
+      footerLogo.src = '/white-logo.png';
+      searchIcon.src = '/white-search.png';
+      menuImg.src = '/white-menu.svg';
+      changeIcon.src = '/sun.png';
+    }
+  }
+  
+  changeTheme.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'light') {
+      // Cambiar a tema oscuro
+      document.documentElement.setAttribute('data-theme', 'dark');
+      logoNavbar.src = '/white-logo.png';
+      footerLogo.src = '/white-logo.png';
+      searchIcon.src = '/white-search.png';
+      menuImg.src = '/white-menu.svg';
+      changeIcon.src = '/sun.png';
+      // Guardar el tema elegido en sessionStorage
+      sessionStorage.setItem('theme', 'dark');
+    } else {
+      // Cambiar a tema claro
+      document.documentElement.setAttribute('data-theme', 'light');
+      searchIcon.src = '/dark-search.png';
+      logoNavbar.src = '/logo.png';
+      footerLogo.src = '/logo.png';
+      menuImg.src = '/menu.svg';
+      changeIcon.src = '/moon.svg';
+      // Guardar el tema elegido en sessionStorage
+      sessionStorage.setItem('theme', 'light');
+    }
+  });
+  </script>
+
+<html lang="es" >
+  <BaseHead title={data.titulo} description={data.text} />
+  <body>
+    <main class={`${layout.Container} relative`}>
+      <Navbar />
+      <Sidenav />
+      <Search />
+      <Article post={data} />
+      <Footer />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
+import Sidenav from "../components/Sidenav.astro";
+import { layout , styles} from "../styles/styles";
+---
+
+<style>
+    p {
+        margin: 2rem 0;
+    }
+</style>
+
+<html data-theme="light">
+  <BaseHead
+    title="terminos de uso"
+    description="terminos de uso de Mañana Saludable"
+  />
+  <body>
+    <main class={`${layout.Container} relative`}>
+      <Navbar />
+      <Sidenav />
+      <section class="my-24">
+        <h1 class={`${styles.heading} text-center`}>Términos de uso de "Mañana Saludable"</h1>
+        <p>
+            Bienvenido/a a "Mañana Saludable". Al acceder y utilizar este sitio web, usted acepta cumplir con los términos y condiciones que se detallan a continuación. Si no está de acuerdo con estos términos, no utilice este sitio web.
+        </p>
+
+        <h4 class={`${styles.title}`}>Propiedad del sitio</h4>
+
+        <p>"Mañana Saludable" es propiedad del Autor de este sitio web. Todos los derechos de propiedad intelectual de este sitio web, incluyendo, entre otros, el contenido, las imágenes, el diseño gráfico, el código fuente, los logos y las marcas, son propiedad exclusiva del mismo y están protegidos por las leyes de propiedad intelectual.</p>
+
+        
+        <h4 class={`${styles.title}`}>Uso del sitio</h4>
+
+        <p>El uso de "Mañana Saludable" es exclusivamente para fines informativos y educativos. No se permite la reproducción, modificación, distribución o venta de ningún contenido del sitio sin el consentimiento expreso del propietario.</p>
+
+
+        <h4 class={`${styles.title}`}>Contenido del sitio</h4>
+
+        <p>El contenido de "Mañana Saludable" está destinado a ser preciso y actualizado en la medida de lo posible. Sin embargo, El propietario no garantiza la exactitud, integridad o actualización del contenido del sitio. El uso del contenido del sitio es bajo su propio riesgo.</p>
+
+        
+        <h4 class={`${styles.title}`}>Responsabilidad del usuario</h4>
+
+        <p>El usuario es responsable de su uso del sitio y se compromete a no utilizar el sitio para fines ilegales o inapropiados. El usuario se compromete a no interferir con el funcionamiento del sitio, a no utilizar el sitio para enviar spam o para recopilar información personal de otros usuarios.</p>
+
+        <h4 class={`${styles.title}`}>Enlaces a otros sitios web</h4>
+
+        <p>"Mañana Saludable" puede proporcionar enlaces a otros sitios web que no son propiedad o están controlados por el propietario. El propietario no es responsable del contenido de estos sitios web y no los respalda. El usuario accede a estos sitios web bajo su propio riesgo.</p>
+
+        <h4 class={`${styles.title}`}>Modificaciones de los términos de uso</h4>
+
+        <p>El propietario se reserva el derecho de modificar estos términos de uso en cualquier momento y sin previo aviso. La versión más reciente de los términos de uso siempre estará disponible en "Mañana Saludable".</p>
+
+        <h4 class={`${styles.title}`}>Ley aplicable y jurisdicción</h4>
+
+        <p>Estos términos de uso se rigen por las leyes de Argentina, sin tener en cuenta sus conflictos de leyes. Cualquier disputa que surja en relación con estos términos de uso se someterá a la jurisdicción exclusiva de los tribunales de Buenos Aires.</p>
+
+      </section>
+    
+      <Footer />
+    </main>
+  </body>
+</html>

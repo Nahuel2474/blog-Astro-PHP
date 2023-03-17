@@ -1,0 +1,44 @@
+---
+import { styles } from "../styles/styles";
+---
+
+<script>
+  const lastAdded = document.getElementById("lastAdded");
+  const topPost = document.getElementById("topPost");
+
+  function getLastThreeMonthsOfYear() {
+    const months = [];
+    const today = new Date();
+    const year = today.getFullYear();
+
+    for (let i = 2; i >= 0; i--) {
+      const month = new Date(year, i, 1);
+      const monthName = month.toLocaleString("default", { month: "long" });
+      months.push(`<li><a href="#"> ${monthName} </a></li>`);
+    }
+
+    return months.join("");
+  }
+
+/*   lastAdded.innerHTML = getLastThreeMonthsOfYear();
+  topPost.innerHTML = getLastThreeMonthsOfYear(); */
+</script>
+
+<aside id="sidenav" class="fixed left-40 top-24 z-10 hidden show text-[#000]">
+  <nav class="bg-[#DEDCDD] p-5 rounded border-2 border-[#aaa]">
+    <h4 class={styles.subtitle}>Categorias</h4>
+    <ul class={`${styles.body} ml-3 liElements` }>
+      <li><a href="/categorias/dietas/1">Dietas</a></li>
+      <li><a href="/categorias/ejercicios/1">Ejercicios</a></li>
+      <li><a href="/categorias/habitos/1">Habitos</a></li>
+
+      <li><a href="/categorias/bienestar-mental/1">bienestar mental</a></li>
+      <li><a href="/categorias/productos-saludables/1">Productos saludables</a></li>
+      <li><a href="/categorias/rutinas-de-sueño/1">Rutinas de sueño</a></li>
+    </ul>
+<!--     <h4 class={styles.subtitle}>Últimos añadidos</h4>
+    <ul class={`${styles.body} ml-3 liElements`} id="lastAdded"></ul>
+    <h4 class={styles.subtitle}>Top Post</h4>
+    <ul class={`${styles.body} ml-3 liElements`} id="topPost"></ul> -->
+  </nav>
+</aside>

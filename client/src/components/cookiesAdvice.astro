@@ -1,0 +1,50 @@
+<style>
+  button {
+    padding: 0.3em 1em;
+    border-radius: 10px;
+    background-color: chocolate;
+    margin: 0 15px;
+    color: white;
+    transition: all 1s;
+  }
+
+  button:hover {
+    background-color: coral;
+  }
+
+  a {
+    border-bottom: 1px solid black;
+    margin-right: 10px;
+  }
+</style>
+
+<script>
+import Cookies from "../pages/cookies.astro";
+
+const btn = document.getElementById("acceptCookies");
+const container = document.getElementById("cookiesContainer");
+
+const cookie = sessionStorage.getItem("cookies");
+
+if (cookie) {
+    container.style.visibility = "hidden"
+}
+
+btn.addEventListener("click", () => {
+    sessionStorage.setItem("cookies", "accept");
+    container.style.visibility = "hidden";
+  });
+
+</script>
+
+<div
+id="cookiesContainer"
+  class="text-[#000] fixed bottom-5 p-4 shadow rounded-full items-center flex justify-between w-1/2 bg-[#7ED623]"
+>
+  <h4 class="flex items-center ml-5">Alerta de cookies</h4>
+
+  <ul class="mr-5">
+    <button id="acceptCookies">aceptar</button>
+    <a href="/cookies">Leer más</a>
+  </ul>
+</div>
